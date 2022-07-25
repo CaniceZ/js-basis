@@ -1,0 +1,19 @@
+{
+  "name": "js-basis",
+  "version": "1.0.0",
+  "description": "算法设计模式数据结构",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaniceZ/js-basis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaniceZ/js-basis/issues"
+  },
+  "homepage": "https://github.com/CaniceZ/js-basis#readme"
+}
