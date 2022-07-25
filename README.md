@@ -1,4 +1,5 @@
 ## 算法(algorithm)
-- 截流 throttle.js
-## 涉及模式
+- 节流 throttle.js
+- 防抖 debiunce.js
+## 设计模式
 ## 数据结构
