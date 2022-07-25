@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="loginBtn">有梦想的咸鱼</div>
+</body>
+<script>
+// 惰性单例是指的是页面开始加载的时候我们的实例是没有进行创建的，是当我们点击页面的div之后才开始创建实例（按需创建），
+// 这可以提高我们的网页性能，加快我们的页面渲染速度；
+// 以上就是怎样用Javascript实现单例模式的详细内容
+let getSingleton = function(fn) {
+    var result;
+    return function() {
+        return result || (result = fn.apply(this, arguments)); // 确定this上下文并传递参数
+    }
+}
+let createAlertMessage = function(html) {
+    var div = document.createElement('div');
+    div.innerHTML = html;
+    div.style.display = 'none';
+    document.body.appendChild(div);
+    return div;
+}
+
+let createSingleAlertMessage = getSingleton(createAlertMessage);
+    document.getElementById('loginBtn').onclick=function(){
+        let alertMessage = createSingleAlertMessage('看来真的是个咸鱼');
+        alertMessage.style.display = 'block';
+    }
+</script>
+</html>
