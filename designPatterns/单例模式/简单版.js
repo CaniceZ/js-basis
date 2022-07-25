@@ -11,7 +11,7 @@ Singleton.prototype.getName = function(){
 }
 
 Singleton.getInstance = function(name){
-    if(this.instace){
+    if(this.instance){
         return this.instance; 
     }
     return this.instance = new Singleton(name);
