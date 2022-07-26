@@ -18,4 +18,4 @@ function handle(x) {
     
 }
 // 滚动事件
-window.addEventListener('scroll', debounce(handle, 1000));
+window.addEventListener('scroll', debounce(handle(123), 1000));

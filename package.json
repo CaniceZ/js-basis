@@ -4,6 +4,8 @@
   "description": "算法设计模式数据结构",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install && yarn commitmsg",
+    "commitmsg": "npx husky add .husky/commit-msg 'npx --no-install commitlint --edit \"$1\"'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,8 +18,11 @@
     "url": "https://github.com/CaniceZ/js-basis/issues"
   },
   "homepage": "https://github.com/CaniceZ/js-basis#readme",
-  "dependencies": {},
+  "dependencies": {
+    "commitlint": "^17.0.3"
+  },
   "devDependencies": {
+    "husky": "^8.0.1",
     "nodemon": "^2.0.19"
   }
 }
