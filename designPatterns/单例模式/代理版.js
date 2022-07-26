@@ -1,4 +1,4 @@
-// 通过代理的形式，将创建对象的操作和实例判断的操作进行解耦拆分，实现更小粒度的划分，符合”单一职责原则“；
+// 通过代理的形式，将创建对象的操作和实例判断的操作进行解耦拆分，实现更小粒度的划分，符合”单一职责原则“； 
 // 上面的代码中，ProxyCreateSingleton()只负责判断实例，Singlton只负责创建对象和赋值；
 let ProxyCreateSingleton = (function(){
     let instance = null;
