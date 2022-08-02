@@ -1,0 +1,68 @@
+<!-- 我们需要很多if...else来进行各种情况的判断，而且我们每增加一种，都需要动表单提交的内部代码，而且复用性几乎为0 -->
+<form id='forgot-password-wrapper' action="" method="post">
+        <label for="mobile">手机号</label>
+        <input type="number" id="mobile" name="mobile">
+        <label for="code">验证码</label>
+        <input type="text" id="code" name="code">
+        <label for="password">新密码</label>
+        <input type="password" id="password" name="password">
+        <label for="passwordAgain">新密码</label>
+        <input type="password" id="passwordAgain" name="passwordAgain">
+        <button id='push'>确认</button>
+</form>
+<script>
+    const forgotPasswordForm = document.getElementById('forgot-password-wrapper')
+    // 传统方式
+    forgotPasswordForm.onsubmit = (e)=>{
+        e.preventDefault()
+        const mobile = document.getElementById('mobile').value
+        const code = document.getElementById('code').value
+        const password = document.getElementById('password').value
+        const passwordAgain = document.getElementById('passwordAgain').value
+        const mobileReg = /^[1][3,4,5,7,8,9][0-9]{9}$/
+
+        if(mobile === null || mobile === ''){
+            console.log('请输入手机号')
+            return false;
+        }else if(!mobileReg.test(mobile)){
+            console.log('请输入正确的手机号')
+            return false;
+        }else if(code === '' || code === null){
+            console.log('请输入验证码')
+            return false;
+        }else if(code.length != 6){
+            console.log('请输入6位数验证码')
+            return false;
+        }else if(password === '' || password === null){
+            console.log('请输密码')
+            return false;
+        }else if(passwordAgain === '' || passwordAgain === null){
+            console.log('请再次输密码')
+            return false;
+        }else if(passwordAgain != password){
+            console.log('两次输入密码不一致')
+            return false;
+        }else{
+            alert('提交成功')
+        }
+    }
+    // 策略模式
+    import checkForm from '@/utils/checkForm'
+    forgotPasswordForm.onsubmit = (e)=>{
+        e.preventDefault()
+        const mobile = document.getElementById('mobile').value
+        const code = document.getElementById('code').value
+        const password = document.getElementById('password').value
+        const passwordAgain = document.getElementById('passwordAgain').value
+
+        const checkMobile = checkForm.mobile(mobile)
+        const checkCode = checkForm.code(code)
+        const checkPassword = checkForm.password(password, passwordAgain)
+        const message = checkMobile || checkCode || checkPassword
+        if(message){
+            alert(message)
+        }else{
+            alert('提交成功')
+        }
+    }
+</script>
