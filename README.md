@@ -4,6 +4,7 @@
 - 斐波那契 fibonacci.js
 - 快速排序 quickSort.js
 - 事件中心 eventHub.js
+- 二分查找 binary_search.js
 ## 设计模式（desigPatterns）
 - 单例模式
   - 简单版
