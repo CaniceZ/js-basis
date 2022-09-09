@@ -6,6 +6,7 @@
 - 事件中心 eventHub.js
 - 二分查找 binary_search.js
 - 判断一个数是否在二维数组中 findNumberIn2DArray.js
+- 找出数组中重复的数字 findRepeatNumber.js
 ## 设计模式（desigPatterns）
 - 单例模式
   - 简单版
