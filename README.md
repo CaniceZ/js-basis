@@ -3,6 +3,7 @@
 - 防抖 debiunce.js
 - 斐波那契 fibonacci.js
 - 快速排序 quickSort.js
+- 冒泡排序 bubbleSort.js
 - 事件中心 eventHub.js
 - 二分查找 binary_search.js
 - 判断一个数是否在二维数组中 findNumberIn2DArray.js

@@ -43,3 +43,29 @@ var findRepeatNumber = function(nums) {
 };
 
 findRepeatNumber([2, 3, 1, 0, 2, 5, 3])
+
+// 输入：head = [1,3,2]
+// 输出：[2,3,1]
+var reversePrint = function(head) {
+    if(!head) return []
+    let arr = [];
+    while(head){
+        arr.push(head.val);
+        head = head.next;
+    }
+    return arr.reverse()
+};
+//递归方法
+
+ function ListNode(val) {
+  this.val = val;
+  this.next = null;
+}
+var reversePrint = function (head) {
+    if(!head) return []
+    let result = reversePrint(head.next)
+    result.push(head.val);
+    return result
+};
+
+reversePrint([{val:1,next:2},{val:2,next:3},{val:3, next:null}])
